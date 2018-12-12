@@ -8,13 +8,13 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DYSafeObject'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = '防止 字典value为nil、数组越界、<null>、NSNull对象导致的Crash.'
   s.homepage         = 'https://github.com/DefaultYuan/DYSafeObject'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'defaultyuan' => '15921462994@163.com' }
-  s.source           = { :git => 'https://github.com/DefaultYuan/DYSafeObject.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/luerhouhou/DYSafeObject.git', :tag => s.version.to_s }
   s.social_media_url = 'https://weibo.com/u/2792951481'
 
   s.ios.deployment_target = '7.0'
@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   files = files.map {|file| file.to_path}
   no_arc_files = ['DYSafeObject/DYSafeObject/Classes/**/NSMutableArray+DYSafe.{h,m}']
   files = files.reject {|file| no_arc_files.include?(file)}
+  echo $files
   s.requires_arc = files.sort
 
   s.frameworks = 'UIKit'
