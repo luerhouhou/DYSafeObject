@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   files = files.map {|file| file.to_path}
   no_arc_files = ['DYSafeObject/DYSafeObject/Classes/**/NSMutableArray+DYSafe.{h,m}']
   files = files.reject {|file| no_arc_files.include?(file)}
-  echo $files
+  
   s.requires_arc = files.sort
 
   s.frameworks = 'UIKit'
